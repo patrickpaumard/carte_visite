@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick PAUMARD – Fichetgroup</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #293845;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            width: 380px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #151d23 0%, #293845 100%);
+            padding: 30px 30px 28px;
+            color: #ffffff;
+        }
+
+        .logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 18px;
+            display: block;
+            filter: brightness(0) invert(1);
+        }
+
+        .company {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7d9baa;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        .job-title {
+            font-size: 13px;
+            color: #7d9baa;
+            letter-spacing: 0.5px;
+        }
+
+        .accent-bar {
+            height: 3px;
+            background: #0bbbef;
+            width: 60px;
+            margin-top: 18px;
+            border-radius: 2px;
+        }
+
+        .card-body { padding: 30px; background: #ffffff; }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #151d23;
+            transition: background 0.2s, border-color 0.2s;
+            margin-bottom: 10px;
+            border: 1px solid #e0e8ed;
+        }
+
+        .contact-item:hover { background: #e8f8fd; border-color: #0bbbef; }
+
+        .icon {
+            width: 44px; height: 44px;
+            border-radius: 11px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; flex-shrink: 0;
+        }
+
+        .icon-phone { background: #e8f8fd; }
+        .icon-email { background: #dff0f7; }
+
+        .contact-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #7d9baa;
+            margin-bottom: 3px;
+        }
+
+        .contact-value { font-size: 14px; font-weight: 600; color: #151d23; }
+
+        .divider { height: 1px; background: #e0e8ed; margin: 22px 0; }
+
+        .qr-section { text-align: center; }
+
+        .qr-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4f6373;
+            margin-bottom: 16px;
+        }
+
+        .qr-section img { border-radius: 8px; }
+
+        .qr-hint { font-size: 11px; color: #7d9baa; margin-top: 12px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <img src="https://www.coffreclesfavre.ch/images/marque/fichet-group.png" alt="Fichetgroup" class="logo">
+            <div class="company">Fichetgroup</div>
+            <div class="name">Patrick PAUMARD</div>
+            <div class="job-title">Formateur Contrôle d'accès</div>
+            <div class="accent-bar"></div>
+        </div>
+        <div class="card-body">
+
+            <a href="tel:+33686554766" class="contact-item">
+                <div class="icon icon-phone">📞</div>
+                <div>
+                    <div class="contact-label">Téléphone</div>
+                    <div class="contact-value">06 86 55 47 66</div>
+                </div>
+            </a>
+
+            <a href="mailto:patrick.paumard@fichetgroup.com" class="contact-item">
+                <div class="icon icon-email">✉️</div>
+                <div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">patrick.paumard@fichetgroup.com</div>
+                </div>
+            </a>
+
+            <div class="divider"></div>
+
+            <div class="qr-section">
+                <div class="qr-label">Scanner pour enregistrer le contact</div>
+                <img id="qrcode" src="" alt="QR Code" width="160" height="160">
+                <div class="qr-hint">Ajoute automatiquement le contact sur votre téléphone</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const url = "https://patrickpaumard.github.io/carte_visite/";
+        document.getElementById("qrcode").src = "https://api.qrserver.com/v1/create-qr-code/?size=160x160&color=151d23&data=" + encodeURIComponent(url);
+    </script>
+</body>
+</html>
